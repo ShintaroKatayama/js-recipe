@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JSSample</title>
+  </head>
+
+  <body>
+    <div id='cards-container'>
+      <div class='card' id='primary-card'>こんにちは</div>
+      <div class='card'>こんばんは</div>
+    </div>
+    <script>
+      const card1 = document.getElementById('primary-card')
+      console.log(card1)
+
+      // CSSのセレクタに合致する要素を ひとつだけ 取得する。
+      const card2 = document.querySelector('.card')
+      console.log(card2)
+
+      // CSSのセレクタに合致する要素を すべて 取得する。
+      const cards = document.querySelectorAll('.card')
+      console.log(cards)
+    </script>
+  </body>
+</html>
