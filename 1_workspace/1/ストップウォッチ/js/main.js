@@ -1,24 +1,14 @@
-const display = document.getElementById("display")
-const button = document.getElementById("button")
+let n = 0
 
-let count = 0
-
-const countUp = function() {
-  count += 1
-  display.textContent = count / 100
-}
-
-let id = null
-
-button.onclick = function() {
-  if (id === null) {
-    // start
-    id = setInterval(countUp, 10)
-    button.textContent = "stop"
+const countUp = function(number) {
+  n++
+  if (n > number) {
+    return
+  } else if (n % 3 === 0) {
+    console.log(n + "!!!!!!!!")
   } else {
-    // stop
-    clearInterval(id)
-    id = null
-    button.textContent = "start"
+    console.log(n)
   }
 }
+
+setInterval(countUp, 1000, 12)
