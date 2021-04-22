@@ -1,6 +1,6 @@
 
 ```bash
 git add .
-git commit -m "Trello発展★★"
+git commit -m "クイズ"
 git push origin master
 ```
