@@ -1,6 +1,6 @@
 
 ```bash
 git add .
-git commit -m "ワーク2"
+git commit -m "week3ペアワーク"
 git push origin master
 ```
