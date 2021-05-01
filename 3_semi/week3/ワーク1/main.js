@@ -23,6 +23,18 @@ addAmountMoney.onclick = () => {
     myMoneyDisplay.textContent = myMoney
     amountMoneyDisplay.textContent = amountMoney
   }
+
+  if (amountMoney >= 100) {
+    teaButton.disabled = false
+  } 
+  
+  if (amountMoney >= 130) {
+    cokeButton.disabled = false
+  }
+
+  if (amountMoney >= 150) {
+    sakeButton.disabled = false
+  }
 }
 
 change.onclick = function() {
@@ -31,6 +43,19 @@ change.onclick = function() {
     amountMoney = 0
     myMoneyDisplay.textContent = myMoney
     amountMoneyDisplay.textContent = amountMoney
+    check()
+  }
+}
+
+const check = function() {
+  if (amountMoney < 100) {
+    teaButton.disabled = true
+  }
+  if (amountMoney < 130) {
+    cokeButton.disabled = true
+  }
+  if (amountMoney < 150) {
+    sakeButton.disabled = true
   }
 }
 
@@ -68,6 +93,7 @@ teaButton.onclick = () => {
     amountMoneyDisplay.textContent = amountMoney
     const image = createImage("tea")
     display.append(image)
+    check()
   }
 }
 
@@ -77,6 +103,7 @@ cokeButton.onclick = () => {
     amountMoneyDisplay.textContent = amountMoney
     const image = createImage("coke")
     display.append(image)
+    check()
   }
 }
 
@@ -86,5 +113,6 @@ sakeButton.onclick = () => {
     amountMoneyDisplay.textContent = amountMoney
     const image = createImage("sake")
     display.append(image)
+    check()
   }
 }

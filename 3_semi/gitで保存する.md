@@ -1,6 +1,6 @@
 
 ```bash
 git add .
-git commit -m "お酒"
+git commit -m "disabledつけ外し"
 git push origin master
 ```
