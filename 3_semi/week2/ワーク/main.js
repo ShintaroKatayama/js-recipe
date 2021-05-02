@@ -21,7 +21,6 @@ function action() {
     deletebutton.textContent = '消去'
     deletebutton.className = 'btn'
     div.append(deletebutton)
-
     deletebutton.onclick = function() {
       div.remove()
     }
@@ -31,5 +30,6 @@ function action() {
   }
 }
 
+memoContainer.remove()
 addbutton.onclick = action
 

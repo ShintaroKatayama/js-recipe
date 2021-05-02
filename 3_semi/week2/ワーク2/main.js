@@ -5,7 +5,7 @@ const change = document.getElementById("change-button")
 
 let memos = []
 
-function add() {
+const add = function() {
   if (input.value === "") {
     return
   }
@@ -17,7 +17,7 @@ function add() {
 addbutton.onclick = add
 
 //配列の中身を表示する
-function draw() {
+const draw = function() {
   memoContainer.innerHTML = ""
   for (let i = 0; i < memos.length; i++) {
     const text = memos[i]
