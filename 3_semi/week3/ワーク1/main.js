@@ -11,9 +11,22 @@ const change = document.getElementById("change")
 let myMoney = 0
 let amountMoney = 0
 
+const checkMoney = function() {
+  if (myMoney === 0) {
+    myMoneyDisplay.classList.remove('vending-machine__display__money--danger', 'vending-machine__display__money--warn')
+    myMoneyDisplay.classList.add('vending-machine__display__money')
+  } else if (myMoney <= 500) {
+    myMoneyDisplay.classList.remove('vending-machine__display__money--danger')
+    myMoneyDisplay.classList.add('vending-machine__display__money--warn')
+  } else if (myMoney <= 1000 && myMoney > 500 || myMoney > 1000) {
+    myMoneyDisplay.classList.add('vending-machine__display__money--danger')
+  }
+}
+
 addMyMoney.onclick = () => {
   myMoney += 1000
   myMoneyDisplay.textContent = myMoney
+  checkMoney()
 }
 
 addAmountMoney.onclick = () => {
@@ -22,12 +35,13 @@ addAmountMoney.onclick = () => {
     amountMoney += 100
     myMoneyDisplay.textContent = myMoney
     amountMoneyDisplay.textContent = amountMoney
+    checkMoney()
   }
-
+  
   if (amountMoney >= 100) {
     teaButton.disabled = false
-  } 
-  
+  }
+
   if (amountMoney >= 130) {
     cokeButton.disabled = false
   }
@@ -44,6 +58,7 @@ change.onclick = function() {
     myMoneyDisplay.textContent = myMoney
     amountMoneyDisplay.textContent = amountMoney
     check()
+    checkMoney()
   }
 }
 

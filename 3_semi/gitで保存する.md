@@ -1,6 +1,6 @@
 
 ```bash
 git add .
-git commit -m "disabledつけ外し"
+git commit -m "MindBEMing2"
 git push origin master
 ```
