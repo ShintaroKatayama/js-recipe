@@ -71,4 +71,3 @@ choiceNumber.onchange = function() {
       }
     })
 }
-

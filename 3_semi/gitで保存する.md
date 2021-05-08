@@ -1,6 +1,6 @@
 
 ```bash
 git add .
-git commit -m "DogAPI発展"
+git commit -m "week4"
 git push origin master
 ```
