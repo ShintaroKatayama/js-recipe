@@ -25,7 +25,7 @@
   <body>
     <div id="app">
       <div>
-        {{count}}
+        {{countUpUp}}
       </div>
       <button @click="countUp">+1</button>
     </div>
@@ -39,6 +39,15 @@
         methods: {
           countUp: function() {
             this.count += 1
+          },
+        },
+        computed: {
+          countUpUp: function() {
+            if (this.count % 3 === 0 && this.count !== 0) {
+              return this.count + "!!!!!"
+            } else {
+              return this.count
+            }
           },
         },
       })
