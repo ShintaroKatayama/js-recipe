@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="ja">
   <head>
@@ -19,8 +18,12 @@
         <div class="cards-container">
           <!-- WORKで編集するのはここから👇 -->
           <div class="card" v-for="(todo,index) in list">
-            <div class="text">
-              {{todo}}
+            <input type="checkbox" v-model="todo.isDone" />
+            <div v-if="todo.isDone === false" class="text">
+              {{ todo.text }}
+            </div>
+            <div v-else style="text-decoration: line-through;" v-else>
+              {{ todo.text }}
             </div>
             <div class="delete" @click="deleteTodo(index)"></div>
           </div>
@@ -43,15 +46,24 @@
         el: "#app",
         data: {
           list: [
-            "ひき肉を300g買う",
-            "ホウレンソウを1束買う",
-            "ピーマンを2個買う",
+            {
+              text: "ひき肉を300g買う",
+              isDone: false,
+            },
+            {
+              text: "ホウレンソウを1束買う",
+              isDone: false,
+            },
+            {
+              text: "ピーマンを2個買う",
+              isDone: false,
+            },
           ],
           inputTodo: [],
         },
         methods: {
           appTodo: function() {
-            this.list.push(this.inputTodo)
+            this.list.push({ text: this.inputTodo, isDone: false })
           },
           deleteTodo: function(index) {
             this.list.splice(index, 1)
@@ -61,4 +73,3 @@
     </script>
   </body>
 </html>
-```
