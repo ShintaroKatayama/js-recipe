@@ -19,12 +19,17 @@
           <!-- WORKで編集するのはここから👇 -->
           <div class="card" v-for="(todo,index) in list">
             <input type="checkbox" v-model="todo.isDone" />
-            <div v-if="todo.isDone === false" class="text">
+            <div class="text" v-bind:class="{done: todo.isDone}">
+              {{ todo.text }}
+            </div>
+
+            <!-- <div v-if="todo.isDone === false" class="text">
               {{ todo.text }}
             </div>
             <div v-else style="text-decoration: line-through;" v-else>
               {{ todo.text }}
-            </div>
+            </div> -->
+
             <div class="delete" @click="deleteTodo(index)"></div>
           </div>
           <!-- WORKで編集するのはここまで👆 -->
