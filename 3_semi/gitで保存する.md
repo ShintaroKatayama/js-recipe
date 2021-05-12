@@ -1,6 +1,6 @@
 
 ```bash
 git add .
-git commit -m "Week4-WORK3"
+git commit -m "Vue クイズ"
 git push origin master
 ```

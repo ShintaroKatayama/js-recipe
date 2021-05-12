@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <h2>Q.{{quiz.text}}</h2>
+      <img v-bind:src="quizImagePath" v-bind:alt="quiz.text" />
+
+      <!-- ボタン入れるとこ -->
+      <div>
+        <button v-for="(todo, i) in quiz.list" @click="choiced(todo)">
+          {{todo.text}}
+        </button>
+      </div>
+      <!-- ボタン入れるとこ -->
+
+      <!-- 答えるところ -->
+      <div>{{feedback}}</div>
+      <!-- 答えるところ -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
